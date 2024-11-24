@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     volunteerButtons.forEach(button => {
         button.addEventListener('click', () => {
-            formContainer.style.display = "block";  // Show the volunteer form
+            formContainer.style.display = "flex";  // Show the volunteer form
         });
     });
 
