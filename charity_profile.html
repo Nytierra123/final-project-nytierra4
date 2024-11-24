@@ -151,83 +151,71 @@
         background-color: #45a049
     }     
 
-    document.addEventListener("DOMContentLoaded", () => {
-  // Hover effect to show additional charity details
-  const charityNames = document.querySelectorAll('.charity-name');
+    .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
 
-  charityNames.forEach(charity => {
-    charity.addEventListener('mouseover', (event) => {
-      const description = event.target.getAttribute('data-description');
-      const tooltip = document.createElement('div');
-      tooltip.classList.add('tooltip');
-      tooltip.textContent = description;
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 500px;
+        }
 
-      // Position the tooltip near the charity name
-      charity.appendChild(tooltip);
-    });
+        .modal-content h3 {
+            margin-top: 0;
+        }
 
-    charity.addEventListener('mouseout', () => {
-      const tooltip = charity.querySelector('.tooltip');
-      if (tooltip) {
-        tooltip.remove();
-      }
-    });
-  });
+        .modal-content input, .modal-content textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
 
-  // Get all the "Volunteer Now" buttons
-  const volunteerButtons = document.querySelectorAll('.volunteer-btn');
+        .modal-content button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-  volunteerButtons.forEach(button => {
-    button.addEventListener('click', (event) => {
-      const charityName = event.target.getAttribute('data-charity'); // Get the charity name
+        .modal-content button:hover {
+            background-color: #45a049;
+        }
 
-      // Create a form dynamically
-      const formContainer = document.createElement('div');
-      formContainer.classList.add('volunteer-form-container');
-      
-      const formHtml = `
-        <h3>Volunteer for ${charityName}</h3>
-        <form id="volunteerForm">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required><br>
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required><br>
-          <label for="message">Why do you want to volunteer?</label><br>
-          <textarea id="message" name="message" rows="4" required></textarea><br>
-          <button type="submit">Submit</button>
-          <button type="button" id="cancelForm">Cancel</button>
-        </form>
-      `;
-      
-      formContainer.innerHTML = formHtml;
+        .modal .close {
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            top: 0;
+            right: 25px;
+            padding: 16px;
+        }
 
-      // Append the form container to the body or a specific section
-      document.body.appendChild(formContainer);
-
-      // Close the form when cancel is clicked
-      const cancelButton = formContainer.querySelector('#cancelForm');
-      cancelButton.addEventListener('click', () => {
-        formContainer.remove();
-      });
-
-      // Handle form submission
-      const volunteerForm = formContainer.querySelector('#volunteerForm');
-      volunteerForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        alert(`Thank you for volunteering for ${charityName}!`);
-        formContainer.remove(); // Remove form after submission
-      });
-    });
-  });
-});
- </style>                                                                                                                                                                                                                                                             border: none;            
-                                                                                                                                                                                                                                                              border-radius: 5px;            
-                                                                                                                                                                                                                                                           crursor: pointer;         
-                                                                                                                                                                                                                                                             } </style>
+        .modal .close:hover,
+        .modal .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        </style>
 </head>
 <body>
-
-
+ 
     <ul>
         <li><a href="index.html">Homepage</a></li>
         <li><a href="charities.html">Charities</a></li>
@@ -270,6 +258,22 @@
     <footer>
         <p>&copy; 2024 HelpHub. All rights reserved.</p>
     </footer>
+<div id="volunteerModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Volunteer Form</h3>
+            <form id="volunteerForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br>
+                <label for="message">Why do you want to volunteer?</label><br>
+                <textarea id="message" name="message" rows="4" required></textarea><br>
+                <button type="submit">Submit</button>
+                <button type="button" id="cancelForm">Cancel</button>
+            </form>
+        </div>
+    </div>    
     <script src= "charity_profile.js"></script></body>
 </html>
 
