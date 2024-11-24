@@ -112,69 +112,7 @@
                   margin: 0;
             }
                   
- .volunteer-btn {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-            font-size: 20px;
-            cursor: pointer;
-            border: none;
-            border-radius: 5px;
-            margin-top: 20px;
-            display: inline-block;
-        }
 
-        .volunteer-btn:hover {
-            background-color: #45a049;
-        }
-
-        /* The Volunteer Form */
-        .volunteer-form-container {
-            display: none; /* Initially hidden */
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            margin-top: 30px;
-            width: 60%;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .volunteer-form-container h3 {
-            margin-top: 0;
-        }
-
-        .volunteer-form-container input,
-        .volunteer-form-container textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-        }
-
-        .volunteer-form-container button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .volunteer-form-container button:hover {
-            background-color: #45a049;
-        }
-
-        .volunteer-form-container .cancel-btn {
-            background-color: #f44336;
-        }
-
-        .volunteer-form-container .cancel-btn:hover {
-            background-color: #cc0000;
-        }
  </style>
 </head>
 <body>
@@ -198,7 +136,7 @@
             <p>Help advance research and treatment for childhood cancer. Together, our contributions create powerful change. Just one dollar a day could save a child's life.</p>
             <img src="https://kidsthatdogood.com/wp-content/uploads/2017/04/St.Judes_.png" width="300" height="200" alt="St. Jude's Hospital">
             <p><a href="https://www.stjude.org/promotion/impact-giving-pm.html?sc_dcm=58700006946881469&sc_cid=kwp&sc_cat=b&&&&&ds_rl=1285465&ds_rl=1291300&msclkid=9b2dd5603b151a7c2e18b2514a6dca62&utm_source=bing&utm_medium=cpc&utm_campaign=M%20-%20Brand%20BMM%20EL&utm_term=st%20jude%20children%20hospital&utm_content=PM_PR_Dig_Srch_PM_AO_US_Nat_MS_M-Ads_LF_-_-_-_SERP-BMM_Srch-B_-_-_-_Core_-_EL_-_-_Srch&gclid=9b2dd5603b151a7c2e18b2514a6dca62&gclsrc=3p.ds">Visit St. Jude's website!</a></p>
-            <button class="volunteer-btn"onclick="toggleVolunteerForm()">Volunteer Here</button>
+            <button class="volunteer-btn">Volunteer Here</button>
 
             
             <h2>American Red Cross</h2>
@@ -206,7 +144,8 @@
             <p>Donating blood or volunteering helps give back to those affected by natural disasters or emergencies.</p>
             <img src="https://th.bing.com/th/id/R.f2ef1fdda5718b156d192c0d82e343d7?rik=Gnsmd%2fLr%2fUgKEg&riu=http%3a%2f%2fpluspng.com%2fimg-png%2famerican-red-cross-logo-png--900.jpg&ehk=chzIbwa1Uvik0JLgmOmlAsGw1l9Yqkm2Xcz5Zzh0uF4%3d&risl=&pid=ImgRaw&r=0" width="300" height="200" alt="American Red Cross">
             <p><a href="https://www.redcrossblood.org/give.html/find-drive?cid=brand&med=cpc&source=bing&scode=RSG00000E017&gclsrc=3p.ds">Visit the Red Cross website</a></p>
-            <button class="volunteer-btn"onclick="toggleVolunteerForm()">Volunteer Here</button>
+            <a href="form.html
+              <button style="fontsize:25px;"volunteer-btn">Volunteer Here</button>
 
             
             <h2>The Salvation Army</h2>
@@ -214,47 +153,15 @@
             <p>The Salvation Army operates rehabilitation facilities across the country, providing help and hope to individuals facing various challenges, including substance abuse. Their residential programs offer spiritual, emotional, and social assistance to help participants live healthy, fulfilling lives.</p>
             <img src="https://th.bing.com/th/id/OIP.aK-Q7OjBRx4frcBp0I794gHaHa?rs=1&pid=ImgDetMain" width="300" height="200" alt="The Salvation Army">
             <p><a href="https://www.salvationarmyusa.org/usn/">Visit The Salvation Army website</a></p>
-            <button class="volunteer-btn"onclick="toggleVolunteerForm()">Volunteer Here</button>
+            <button class="volunteer-btn">Volunteer Here</button>
         </div>
     </main>
-<div class="volunteer-form-container" id="volunteerFormContainer">
-        <h3>Volunteer Form</h3>
-        <form action="mailto:contact@yourdomain.com" method="POST" enctype="multipart/form-data" name="EmailForm">
-            <label for="Contact-Name">Name:</label><br>
-            <input type="text" id="Contact-Name" name="Contact-Name" size="30" required><br><br>
 
-            <label for="Contact-Email">Email:</label><br>
-            <input type="email" id="Contact-Email" name="Contact-Email" required><br><br>
-
-            <label for="Contact-Message">Why do you want to volunteer?</label><br>
-            <textarea id="Contact-Message" name="Contact-Message" rows="4" cols="50" required></textarea><br><br>
-
-            <label for="Contact-File">Attach File (Optional):</label><br>
-            <input type="file" id="Contact-File" name="Contact-File"><br><br>
-
-            <button type="submit">Submit</button>
-            <button type="button" class="cancel-btn" onclick="toggleVolunteerForm()">Cancel</button>
-        </form>
-    </div>
-
-    <script>
-        // Function to toggle the visibility of the volunteer form
-        function toggleVolunteerForm() {
-            var formContainer = document.getElementById('volunteerFormContainer');
-            // Toggle visibility of the form
-            if (formContainer.style.display === "none" || formContainer.style.display === "") {
-                formContainer.style.display = "block";
-            } else {
-                formContainer.style.display = "none";
-            }
-        }
-    </script>
     <footer>
         <p>&copy; 2024 HelpHub. All rights reserved.</p>
     </footer>
 
 </body>
 </html>
-
      
            
