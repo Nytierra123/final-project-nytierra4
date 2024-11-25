@@ -74,6 +74,25 @@ p {
             display: flex;
             flex-direction: column;
         }
+.tooltip {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            max-width: 200px;
+            display: none;
+            z-index: 10;
+        }
+
+       
+        .charity-image-container {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+        
     </style>
 </head>
 <body>
@@ -173,7 +192,32 @@ p {
             }
         }
     </script>
+  
+ <script>
+        // Show Tooltip
+        function showTooltip(event, text) {
+            var tooltip = document.getElementById('tooltip');
+            tooltip.style.display = 'block';
+            tooltip.style.left = event.pageX + 10 + 'px'; // Position tooltip near the mouse cursor
+            tooltip.style.top = event.pageY + 10 + 'px'; // Position tooltip near the mouse cursor
+            tooltip.textContent = text;
+        }
 
+        // Hide Tooltip
+        function hideTooltip() {
+            document.getElementById('tooltip').style.display = 'none';
+        }
+
+        // Form Toggle (previously discussed)
+        function toggleForm() {
+            var form = document.getElementById('volunteer-form');
+            if (form.style.display === "none" || form.style.display === "") {
+                form.style.display = "block";
+            } else {
+                form.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>     
            
