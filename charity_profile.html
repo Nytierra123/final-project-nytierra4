@@ -194,21 +194,20 @@ p {
     </script>
   
  <script>
-        // Show Tooltip
+        
         function showTooltip(event, text) {
             var tooltip = document.getElementById('tooltip');
             tooltip.style.display = 'block';
-            tooltip.style.left = event.pageX + 10 + 'px'; // Position tooltip near the mouse cursor
-            tooltip.style.top = event.pageY + 10 + 'px'; // Position tooltip near the mouse cursor
+            tooltip.style.left = event.pageX + 10 + 'px';
+            tooltip.style.top = event.pageY + 10 + 'px'; 
             tooltip.textContent = text;
         }
 
-        // Hide Tooltip
         function hideTooltip() {
             document.getElementById('tooltip').style.display = 'none';
         }
 
-        // Form Toggle (previously discussed)
+        
         function toggleForm() {
             var form = document.getElementById('volunteer-form');
             if (form.style.display === "none" || form.style.display === "") {
