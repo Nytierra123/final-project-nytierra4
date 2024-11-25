@@ -108,11 +108,31 @@
                   margin-top: auto;
                   z-index: 1;  
                   margin: 0;  
+                  
             footer p {
                   margin: 0;
             }
-                  
 
+            .form-container {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            width: 300px;
+        }
+
+        
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
  </style>
 </head>
 <body>
@@ -153,7 +173,28 @@
             <p><a href="https://www.salvationarmyusa.org/usn/">Visit The Salvation Army website</a></p>
             <button class="volunteer-btn">Volunteer Here</button>
         </div>
-    </main>
+    </main>
+           <button id="openFormBtn">Open Form</button>
+
+    <div class="form-container" id="formContainer">
+        <form>
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name"><br><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email"><br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>   
+     <script>
+        // Get the button and form container elements
+        const openFormBtn = document.getElementById('openFormBtn');
+        const formContainer = document.getElementById('formContainer');
+
+        // Add event listener to button to show the form when clicked
+        openFormBtn.addEventListener('click', () => {
+            formContainer.style.display = 'block';  // Show the form
+        });
+    </script>
 
     <footer>
         <p>&copy; 2024 HelpHub. All rights reserved.</p>
