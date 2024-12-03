@@ -6,19 +6,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     volunteerButtons.forEach(button => {
         button.addEventListener('click', () => {
-            formContainer.style.display = "flex";  // Show the volunteer form
+            formContainer.style.display = "flex";  
         });
     });
 
-    // Cancel button closes the form
+    
     cancelButton.addEventListener('click', () => {
-        formContainer.style.display = "none";  // Hide the form
+        formContainer.style.display = "none";  
     });
 
-    // Handle form submission
+   
     volunteerForm.addEventListener('submit', (e) => {
         e.preventDefault();
         alert("Thank you for volunteering! We will be in touch soon.");
-        formContainer.style.display = "none";  // Hide the form after submission
+        formContainer.style.display = "none";  
     });
 });
